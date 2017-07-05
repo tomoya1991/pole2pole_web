@@ -114,7 +114,11 @@ ul {
     padding-left: 1em; }
 
 h2 {
-  margin: 30px 0; }
+  margin: 30px 50px;
+  color: #999999;
+  letter-spacing:0.2em;
+  font-size: 1.2em;
+   }
 
 #cat {
   font-size: 0.8em;
@@ -191,7 +195,9 @@ header {
         padding: 0 3em;
       }
         header nav ul li a {
-          padding: 0 3px; }
+          padding: 0 3px; 
+          letter-spacing: 0.2em;
+          }
       header nav ul:before, header nav ul:after {
         content: "";
         display: table; }
@@ -278,10 +284,9 @@ header {
     text-decoration: none;
     width: 960px; }
     #wrapper #works a.work_wrapper h3 {
-      width: 956px;
-      padding: 10px 2px;
+      float: left;
+      padding: 0px 20px;
       margin-top: 0;
-      margin-bottom: 40px; }
       #wrapper #works a.work_wrapper h3 span.year {
         font-size: 0.7em;
         padding-left: 20px; }
