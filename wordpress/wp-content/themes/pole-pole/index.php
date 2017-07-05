@@ -19,7 +19,9 @@
 	}
 ?>
 <?php endif; ?>
-
+<div id="top_log">
+	<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/top_log.png" width="940" height="50" alt="ロゴ"></a></h1>
+</div>
 <?php $the_query = new WP_Query('cat=3'); if($the_query->have_posts()): ?>
 <div id="works">
 <h2>WORKS</h2>

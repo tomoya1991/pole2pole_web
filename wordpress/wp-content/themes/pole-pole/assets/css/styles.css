@@ -39,7 +39,7 @@ html[lang="en"] body {
 body {
   font-family: 'Yantramanav', Helvetica, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", Arial, sans-serif;
   color: #0b2c67;
-  background-color: #999999; }
+  background-color: #fff; }
 
 body.win {
   font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
@@ -171,7 +171,7 @@ header {
         content: '';
         width: 0;
         height: 1px;
-        background-color: #fff;
+        background-color: #999999;
         transition: .3s;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
@@ -216,7 +216,7 @@ header {
     font-size: 2em;
     line-height: 1em; }
     header a#nav_btn:hover {
-      background: #fff;
+      background: #999999;
       color: #4444ff; }
   header:before, header:after {
     content: "";
@@ -253,7 +253,14 @@ header {
       left: 15px; }
     header.narrow.mob a#nav_btn {
       display: block; }
-
+#top_log{
+  text-align: center;
+  margin:12.5em 0 12.5em 0; 
+}
+#top_log img{
+  width: 65%;
+  height: 65%;
+}
 #wrapper {
   position: relative;
   padding-top: 100px;
