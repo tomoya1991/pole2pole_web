@@ -28,7 +28,7 @@
 <body>
 
 <header>
-	<h1><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/header_log.png" width="50" height="50" alt="ロゴ"></a></h1>
+	<h1><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/header_log.jpg" width="50" height="50" alt="ロゴ"></a></h1>
 	<nav>
 		<ul>
 			<li><a href="<?php echo get_home_url(); ?>/works/" title="">news</a></li>
@@ -43,4 +43,3 @@
 <div id="nav_mob_layer"></div>
 
 <div id="wrapper">
-<hr>
