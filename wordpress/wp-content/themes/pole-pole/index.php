@@ -17,7 +17,7 @@
 	<?php endif; ?>
 <?php $the_query = new WP_Query('cat=3'); if($the_query->have_posts()): ?>
 <div id="works">
-<h2>WORKS</h2>
+<h2>news</h2>
 <?php while (have_posts()) : the_post(); $id=get_the_ID(); ?>
 <?php if(get_post_meta($id, 'work_text', true)): ?>
 <a href="<?php the_permalink(); ?>" class="work_wrapper">
