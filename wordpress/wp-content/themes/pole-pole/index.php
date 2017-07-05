@@ -1,27 +1,20 @@
 <?php get_header(); ?>
-
+<div id="top_log">
+	<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/top_log.png" width="940" height="50" alt="ロゴ"></a></h1>
+</div>
 <?php $the_query = new WP_Query('cat=2'); if($the_query->have_posts()): ?>
-<?php
+	<?php
 	while ($the_query->have_posts()){
 		$the_query->the_post();
 		$id = get_the_ID();
 		if(get_post_meta($id, 'ex_close_date', true) != '' && date_i18n('Y-m-d H:i:s') < get_post_meta($id, 'ex_close_date', true)){
 			$newsJa .= '<li><a href="'.get_post_meta($id, 'ex_link', true).'" target="_blank">'.get_the_title().'</a> @<a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place', true).'</a>（'.get_post_meta($id, 'ex_area', true).'）｜'.get_post_meta($id, 'ex_date', true).'</li>';
-			$newsEn .= '<li><a href="'.get_post_meta($id, 'ex_link', true).'" target="_blank">'.get_post_meta($id, 'ex_title_en', true).'</a> @<a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place_en', true).'</a>（'.get_post_meta($id, 'ex_area_en', true).'）｜'.get_post_meta($id, 'ex_date_en', true).'</li>';
+			$upcom = '<div id="upcom"><h2>UP COMING</h2>'.$newsJa.'</div>';
+			echo $upcom;
+			wp_reset_postdata();
 		}
-	}
-	wp_reset_postdata();
-	if($newsJa != ''){
-		$newsJa = '<ul class="jap">'.$newsJa.'</ul>';
-		$newsEn = '<ul class="eng">'.$newsEn.'</ul>';
-		$upcom = '<div id="news"><h2>UP COMING / CURRENT EXHIBITION</h2>'.$newsJa.$newsEn.'</div><hr>';
-		echo $upcom;
-	}
-?>
-<?php endif; ?>
-<div id="top_log">
-	<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/top_log.png" width="940" height="50" alt="ロゴ"></a></h1>
-</div>
+	} ?>
+	<?php endif; ?>
 <?php $the_query = new WP_Query('cat=3'); if($the_query->have_posts()): ?>
 <div id="works">
 <h2>WORKS</h2>
