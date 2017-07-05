@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php $the_query = new WP_Query('cat=2'); if($the_query->have_posts()): ?>
+<?php $the_query = new WP_Query('cat=8'); if($the_query->have_posts()): ?>
 <?php
 	while ($the_query->have_posts()){
 		$the_query->the_post();
@@ -20,7 +20,7 @@
 ?>
 <?php endif; ?>
 
-<?php $the_query = new WP_Query('cat=3'); if($the_query->have_posts()): ?>
+<?php $the_query = new WP_Query('cat=8'); if($the_query->have_posts()): ?>
 <div id="works">
 <h2>WORKS</h2>
 <?php while (have_posts()) : the_post(); $id=get_the_ID(); ?>
