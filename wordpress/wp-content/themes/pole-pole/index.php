@@ -28,7 +28,7 @@
 	?>
 <a href="<?php the_permalink(); ?>" class="work_wrapper">
 <div class="work">
-<?php if ( has_post_thumbnail() )  the_post_thumbnail('medium'); ?>
+<img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
 <h3><?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?>
 <span class="year"><?php the_time('Y/n/j'); ?></span>
 <span class="tag"><?php echo $tag_name;?></span>

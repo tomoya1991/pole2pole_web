@@ -31,7 +31,7 @@
 	<h1><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/header_log.jpg" width="50" height="50" alt="ロゴ"></a></h1>
 	<nav>
 		<ul>
-			<li><a href="<?php echo get_home_url(); ?>/news/" title="">news</a></li>
+			<li><a href="<?php echo get_home_url(); ?>" title="">news</a></li>
 			<li><a href="<?php echo get_home_url(); ?>/works/" title="">works</a></li>
 			<li><a href="<?php echo get_home_url(); ?>/about/" title="">about</a></li>
 		</ul>
