@@ -336,9 +336,9 @@ header {
         float: left;
         width: 120px;
     }
-
-    footer #copy{
-        float: right;
+    footer p{
+      margin-top: 0px;
+      float: right;
     }
     footer:after{
         clear: both;
@@ -351,3 +351,11 @@ header {
         display: block; }
     footer.mob {
         text-decoration: none; }
+    footer.mob #copy{
+        margin: 0 auto;
+        width: 172px;
+    }
+    footer.mob p{
+      float: right;
+      margin-top: 10px;
+    }
