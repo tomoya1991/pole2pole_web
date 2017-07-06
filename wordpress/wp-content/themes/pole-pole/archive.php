@@ -28,15 +28,10 @@
 	echo $ul;
 ?>
 
-<?php elseif(is_category(array(2,6,7))): ?>
+<?php elseif(is_category(array(8))): ?>
 <?php
-	$catName = '';
-	if(is_category(2)) $catName = 'EXHIBITION / EVENT';
-	if(is_category(6)) $catName = 'SOLO SHOW';
-	//if(is_category(6)) $catName = 'WORKSHOP';
-	if(is_category(7)) $catName = 'GROUP SHOW';
 ?>
-<h2><?php echo $catName; ?></h2>
+<h2>news</h2>
 <div id="cat"><a href="<?php echo get_home_url(); ?>/?cat=2">All</a> / <a href="<?php echo get_home_url(); ?>/?cat=6">Solo Show</a> / <a href="<?php echo get_home_url(); ?>/?cat=7">Group Show</a> <!-- <a href="<?php echo get_home_url(); ?>/?cat=6">Workshop</a>--></div>
 <?php
 	$n = 0;
