@@ -4,7 +4,7 @@
     <div id="footer_img">
 	<img src="<?php bloginfo('template_url'); ?>/assets/img/footer_log.jpg">
 	</div>
-    <div id="copy">Cpyright(c) pole-pole texitile labo All Rights Reserved.</div>
+    <div id="copy"><p>Cpyright(c) pole-pole texitile labo All Rights Reserved.</p></div>
         </div>
 </footer>
 
