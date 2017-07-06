@@ -31,13 +31,13 @@
 	<h1><a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/header_log.png" width="50" height="50" alt="ロゴ"></a></h1>
 	<nav>
 		<ul>
-			<li><a href="<?php echo get_home_url(); ?>/works/" title="">news</a></li>
-			<li><a href="<?php echo get_home_url(); ?>/exhibitions/" title="">works</a></li>
+			<li><a href="<?php echo get_home_url(); ?>/news/" title="">news</a></li>
+			<li><a href="<?php echo get_home_url(); ?>/works/" title="">works</a></li>
 			<li><a href="<?php echo get_home_url(); ?>/about/" title="">about</a></li>
 		</ul>
 	</nav>
 	<!-- <p id="lng"><a class="en">English</a><span id="divi">/</span><a class="ja">日本語</a></p>-->
-	<a id="nav_btn">☰</a> 
+	<a id="nav_btn">☰</a>
 </header>
 
 <div id="nav_mob_layer"></div>
