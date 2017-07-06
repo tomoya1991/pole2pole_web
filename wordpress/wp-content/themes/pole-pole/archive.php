@@ -32,7 +32,6 @@
 <?php
 ?>
 <h2>news</h2>
-<div id="cat"><a href="<?php echo get_home_url(); ?>/?cat=2">All</a> / <a href="<?php echo get_home_url(); ?>/?cat=6">Solo Show</a> / <a href="<?php echo get_home_url(); ?>/?cat=7">Group Show</a> <!-- <a href="<?php echo get_home_url(); ?>/?cat=6">Workshop</a>--></div>
 <?php
 	$n = 0;
 	$last_y = '2001';
