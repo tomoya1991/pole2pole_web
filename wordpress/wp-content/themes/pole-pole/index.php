@@ -7,14 +7,12 @@
 		$id = get_the_ID();
 		if(get_post_meta($id, 'ex_close_date', true) != '' && date_i18n('Y-m-d H:i:s') < get_post_meta($id, 'ex_close_date', true)){
 			$newsJa .= '<li><a href="'.get_post_meta($id, 'ex_link', true).'" target="_blank">'.get_the_title().'</a> @<a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place', true).'</a>（'.get_post_meta($id, 'ex_area', true).'）｜'.get_post_meta($id, 'ex_date', true).'</li>';
-			$newsEn .= '<li><a href="'.get_post_meta($id, 'ex_link', true).'" target="_blank">'.get_post_meta($id, 'ex_title_en', true).'</a> @<a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place_en', true).'</a>（'.get_post_meta($id, 'ex_area_en', true).'）｜'.get_post_meta($id, 'ex_date_en', true).'</li>';
 		}
 	}
 	wp_reset_postdata();
 	if($newsJa != ''){
 		$newsJa = '<ul class="jap">'.$newsJa.'</ul>';
-		$newsEn = '<ul class="eng">'.$newsEn.'</ul>';
-		$upcom = '<div id="news"><h2>UP COMING / CURRENT EXHIBITION</h2>'.$newsJa.$newsEn.'</div>';
+		$upcom = '<div id="news"><h2>UP COMING / CURRENT EXHIBITION</h2>'.$newsJa.'</div>';
 		echo $upcom;
 	}
 ?>
