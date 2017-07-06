@@ -37,7 +37,7 @@ html[lang="en"] body {
   font-family: 'Yantramanav', Arial; }
 
 body {
-  font-family: 'Yantramanav', Helvetica, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", Arial, sans-serif;
+  font-family: 'Yantramanav', Helvetica, "游ゴシック体", "Yu Gothic", Arial, sans-serif;
   color: #0b2c67;
   background-color: #fff; }
 
@@ -117,7 +117,8 @@ h2 {
   margin: 30px 50px;
   color: #999999;
   letter-spacing:0.2em;
-  font-size: 1.2em;
+  font-size: 1em;
+  font-weight: normal;
    }
 
 #cat {
@@ -155,7 +156,7 @@ header {
     text-decoration: none; }
   header h1 {
     float: left;
-    margin: 50 50px; }
+    margin: 50px 50px; }
     header h1 a {
       padding: 0 10px; }
   header nav {
@@ -186,7 +187,7 @@ header {
     header nav:after {
       clear: both; }
     header nav ul {
-      margin: 39px 0;
+      margin: 50px 0;
       /* For modern browsers */
       zoom: 1;
       /* For IE 6/7 (trigger hasLayout) */ }
@@ -261,11 +262,23 @@ header {
       display: block; }
 #top_log{
   text-align: center;
-  margin:12.5em 0 12.5em 0; 
+  margin:18em 0 8em 0; 
 }
 #top_log img{
   width: 65%;
   height: 65%;
+}
+#upcom{
+  margin-bottom: 10em;
+}
+#upcom li{
+  list-style: none;
+  margin: 0 50px;
+  font-size: 1em;
+  font-weight: normal;
+}
+#upcom a{
+  text-decoration: none;
 }
 #wrapper {
   position: relative;
@@ -285,13 +298,15 @@ header {
     width: 960px; }
     #wrapper #works a.work_wrapper h3 {
       float: left;
-      padding: 0px 20px;
+      padding: 0px 50px;
       margin-top: 0;
+      font-weight: normal;
+      font-size: 1em;
+      letter-spacing: 0.1em;
+    }
       #wrapper #works a.work_wrapper h3 span.year {
         font-size: 0.7em;
         padding-left: 20px; }
-    #wrapper #works a.work_wrapper:hover h3 {
-      background-color: #00f; }
   #wrapper #single #images img {
     padding-bottom: 5px; }
   #wrapper.narrow {
@@ -306,9 +321,10 @@ header {
 
     footer {
       z-index: 1;
-      color:#fff;
-      font-size: 5pt;
+      color:#999999;
+      font-size: 0.5em;
       width: 100%;
+      margin: 4em 0 0;
       overflow: hidden;
     }
     footer #footer_img{
