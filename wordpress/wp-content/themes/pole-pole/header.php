@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="">
 
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/import.css" type="text/css" media="screen" />
-<link href="https://fonts.googleapis.com/css?family=Yantramanav:300" rel="stylesheet"><!--グーグルフォント-->
+<link href="https://fonts.googleapis.com/css?family=Yantramanav:100,300" rel="stylesheet">
 
 <body>
 

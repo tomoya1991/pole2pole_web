@@ -28,7 +28,7 @@ default
 //////////////////////////////////////// */
 html, body {
   -webkit-text-size-adjust: none;
-  font-size: 18px; }
+  font-weight: 300; }
 
 html[lang="ja"] body {
   font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
@@ -37,7 +37,7 @@ html[lang="en"] body {
   font-family: 'Yantramanav', Arial; }
 
 body {
-  font-family: 'Yantramanav', Helvetica, "游ゴシック体", "Yu Gothic", Arial, sans-serif;
+  font-family: 'Yantramanav', "游ゴシック体", "Yu Gothic", Arial, sans-serif;
   color: #0b2c67;
   background-color: #fff; }
 
@@ -118,7 +118,7 @@ h2 {
   color: #999999;
   letter-spacing:0.2em;
   font-size: 1em;
-  font-weight: normal;
+  font-weight: 100;
    }
 
 #cat {
@@ -305,8 +305,9 @@ header {
       letter-spacing: 0.1em;
     }
       #wrapper #works a.work_wrapper h3 span.year {
-        font-size: 0.7em;
-        padding-left: 20px; }
+        font-size: 0.8em;
+        float: right;
+         }
   #wrapper #single #images img {
     padding-bottom: 5px; }
   #wrapper.narrow {
