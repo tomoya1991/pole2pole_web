@@ -129,7 +129,7 @@ ul {
     padding-left: 1em; }
 
 h2 {
-  margin: 30px 50px;
+  margin: 30px 10%;
   color: #999999;
   letter-spacing:0.2em;
   font-size: 1em;
@@ -159,10 +159,12 @@ h2 {
 
 header {
   z-index: 10;
+  background: rgba(255,255,255,0.6);
   height: 100px;
-  width: 99%;
+  width: 100%;
   position: fixed;
-  float: left;
+  top:0;
+  left: 0;
   display: block;
   /* For modern browsers */
   zoom: 1;
@@ -171,7 +173,7 @@ header {
     text-decoration: none; }
   header h1 {
     float: left;
-    margin: 50px 50px; }
+    margin: 50px 10%; }
   header nav {
     /* For modern browsers */
     zoom: 1;
@@ -206,7 +208,7 @@ header {
       /* For IE 6/7 (trigger hasLayout) */ }
       header nav ul li {
         float: left;
-        padding: 0 3em;
+        padding: 0.5em 3em;
       }
         header nav ul li a {
           padding: 0 3px; 
@@ -230,7 +232,7 @@ header {
   header a#nav_btn {
     display: none;
     position: fixed;
-    top: 30px;
+    top: 50px;
     right: 10px;
     height: 35px;
     font-size: 2em;
@@ -244,10 +246,13 @@ header {
   header:after {
     clear: both; }
   header.narrow {
-    height: 75px;}
+    height: 200px;
+    background: rgba(255,255,255,0.6);
+    top: 0px;
+    left: 0px;
+    }
     header.narrow nav ul {
       height: 66px;
-      margin: 4.5px 0;
       margin-left: 30px; }
       header.narrow nav ul li {
         float: none;
@@ -263,6 +268,9 @@ header {
         padding: 0 3px; }
       header.narrow p#lng span#divi {
         display: none; }
+    header.narrow.mob{
+      height: 130px;
+    }
     header.narrow.mob nav, header.narrow.mob #lng {
       display: none;
       position: fixed;
@@ -286,7 +294,7 @@ header {
 }
 #upcom li{
   list-style: none;
-  margin: 0 50px;
+  margin: 0 10%;
   font-size: 1em;
   font-weight: normal;
 }
@@ -309,19 +317,19 @@ header {
     background-color: #fff;
     text-decoration: none;
     width: 960px;
-    margin: 8em 50px;
+    margin: 8em 4em;
      }
     #wrapper #works a.work_wrapper img{
-      max-width: 60%;
+      max-width: 50%;
     }
     #wrapper #works a.work_wrapper h3 {
       float: left;
-      padding: 0px 50px;
-      margin-top: 0;
+      margin: 0 10% 5% ;
       font-weight: normal;
       font-size: 1em;
       letter-spacing: 0.1em;
       min-width: 28%;
+      max-width: 30%;
     }
       #wrapper #works a.work_wrapper h3 p{
         text-align: right;
@@ -348,9 +356,20 @@ header {
     #wrapper.narrow .contents {
       width: 100%; }
     #wrapper.narrow #works a.work_wrapper {
-      width: 100%; }
-      #wrapper.narrow #works a.work_wrapper h3 {
-        padding: 5px 2px; }
+      width: 88%;
+      margin: 0px;
+      padding-top: 3em;
+      }
+      #wrapper.narrow #works a.work_wrapper  img {
+        min-width: 80%;
+        padding-left: 10%;
+      }
+      #wrapper.narrow #works a.work_wrapper  p {
+        text-align: left;
+      }
+      #wrapper.narrow #works a.work_wrapper  span.year {
+        float: left;
+      }
 
     footer {
       z-index: 1;
