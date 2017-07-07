@@ -17,7 +17,7 @@
     $first_img = $matches [1] [0];
 
 if(empty($first_img)){ //Defines a default image
-        $first_img = bloginfo('template_url')."/assets/img/header_log.jpg";
+        $first_img = bloginfo('template_url')."/assets/img/img_not_found.jpg";
     }
     return $first_img;
 }
