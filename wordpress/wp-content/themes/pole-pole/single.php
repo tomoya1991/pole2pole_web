@@ -4,7 +4,7 @@
 
 <!--workカテゴリー(id=3)を表示させる記述-->
 <?php if(in_category('3')): $id=get_the_ID(); ?>
-
+<?php $slug = get_page_uri(get_the_ID()); ?>
 <h2><?php the_title(); ?>
 <?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?></h2>
 <div id="video">
@@ -15,20 +15,19 @@
 		the_post_thumbnail('medium');
 	}
 ?>
+<div id="images">
+<?php the_content(); ?>
+</div>
 </div>
 <div id="outline">
 <p class="jap">
-<?php echo get_post_meta($id, 'work_text', true); ?>
+<?php echo nl2br(get_post_meta($id, 'work_text', true));?> <br>
 </p>
 <p class="eng">
 <?php echo get_post_meta($id, 'work_text_en', true); ?>
 </p>
 </div>
 <br>
-
-<div id="images">
-<?php the_content(); ?>
-</div>
 
 <!--category2-->
 <?php elseif(in_category('2')): ?>
@@ -58,20 +57,21 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?>
 </p>
 </div>
-<?php elseif(in_category(8)): //category 2 ?>
+<?php elseif(in_category(8)): //category 2 -> category 8 ?>
 <p class="jap">
 <?php the_title();?>
 </p>
 <div id="images">
 <?php the_content(); ?>
 </div>
-
+<?php echo nl2br(get_post_meta($id, 'news_text', true));?> <br>
 <? endif; ?>
 </div><!-- #single -->
 <?php endwhile; else: ?>
 <?php endif; ?>
 <?php wp_reset_postdata()?>
-<?php $the_query = new WP_Query('tag='.get_the_title()); if($the_query->have_posts()): ?>
+<?php if($slug != ''): ?>
+<?php $the_query = new WP_Query('tag='.$slug); if($the_query->have_posts()): ?>
 <div id="single_archive">
 <h3>Related Stuff</h3>
 <?php
@@ -82,7 +82,7 @@ Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?>
 
 		$args = array(
 	 'post_type'   => 'attachment',
-	 'numberposts' => 1,
+	 'numberposts' => 5,
 	 'post_status' => null,
 	 'post_parent' => $id
  );
@@ -96,10 +96,8 @@ Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?>
  }
 }
 	wp_reset_postdata();
-	$newsJa .= '</ul>';
-
 ?>
 </div>
-<?php endif;?>
+<?php endif;endif;?>
 
 <?php get_footer(); ?>
