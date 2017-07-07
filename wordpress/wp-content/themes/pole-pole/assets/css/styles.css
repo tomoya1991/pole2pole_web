@@ -283,7 +283,7 @@ header {
       display: block; }
 #top_log{
   text-align: center;
-  margin:18em 0 8em 0; 
+  margin:9em 0 8em 0; 
 }
 #top_log img{
   width: 65%;
@@ -370,6 +370,13 @@ header {
       #wrapper.narrow #works a.work_wrapper  span.year {
         float: left;
       }
+      #wrapper #content #post-2 .entry #about{
+        padding-left: 10%;
+      }
+      #wrapper #content #post-2.post .entry #about #WRchTxt7-w8c.txtNew pre.font_2 span.color_13{
+        letter-spacing: 0.1em;
+      }
+
 
     footer {
       z-index: 1;
