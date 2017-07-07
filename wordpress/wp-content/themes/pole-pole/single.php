@@ -1,18 +1,12 @@
 <?php get_header(); ?>
-
 <div id="single" class="contents">
-<?php $tag_name = ''; ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+<!--workカテゴリー(id=3)を表示させる記述-->
 <?php if(in_category('3')): $id=get_the_ID(); ?>
-<h2><?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?></h2>
-<?php $posttags = get_the_tags();
-if ($posttags) {
-foreach($posttags as $tag) {
-	$tag_name = $tag->name . ' ';
-	}
-}
-?>
+
+<h2><?php the_title(); ?>
+<?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?></h2>
 <div id="video">
 <?php
 	if(get_post_meta($id, 'video_url', true) != ''){
@@ -30,20 +24,19 @@ foreach($posttags as $tag) {
 <?php echo get_post_meta($id, 'work_text_en', true); ?>
 </p>
 </div>
-<hr>
 <br>
 
 <div id="images">
-<?php echo get_post_meta($id, 'ex_imgs',true); ?>
+<?php the_content(); ?>
 </div>
-
 <?php wp_reset_postdata()?>
 <?php elseif(in_category('2')): ?>
+
 <h2><span class="jap"><?php the_title(); ?></span><span class="eng"><?php echo get_post_meta($id, 'ex_title_en', true); ?></span></h2>
 <div id="images">
 <?php get_post_meta($id, 'ex_imgs', true); ?>
 </div>
-<hr>
+
 <div id="outline">
 <?php if ( has_post_thumbnail() )  the_post_thumbnail('thumbnail'); ?>
 <p class="jap">
@@ -66,37 +59,26 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?>
 </p>
 </div>
-<?php $posttags = get_the_tags();
-if ($posttags) {
-foreach($posttags as $tag) {
-	$tag_name = $tag->name;
-	}
-}
-?>
 <?php endif; //category 2 ?>
 </div><!-- #single -->
 <?php endwhile; else: ?>
 <?php endif; ?>
 
-<?php echo $tag_name;?>
-<hr>
-<?php $the_query = new WP_Query('tag=works_name_1'); if($the_query->have_posts()): ?>
+<?php $the_query = new WP_Query('tag='.get_the_title()); if($the_query->have_posts()): ?>
 <div id="single_archive">
-<h3>Related Exhibitions</h3>
+<h3>Related Stuff</h3>
 <?php
 	$newsJa = '<ul class="jap">';
 	while ($the_query->have_posts()){
-		echo 'gohan';
 		$the_query->the_post();
 		$id = get_the_ID();
 
 		$args = array(
 	 'post_type'   => 'attachment',
-	 'numberposts' => -1,
+	 'numberposts' => 1,
 	 'post_status' => null,
 	 'post_parent' => $id
  );
-
  $attachments = get_posts( $args );
  if ( $attachments ) {
 	 foreach ( $attachments as $attachment ) {
@@ -105,17 +87,12 @@ foreach($posttags as $tag) {
 		 echo '</p>';
 	 }
  }
-		$img_url = "hoihoi";
- 		$img_url = ' < img src="' .$attachments[0]->post_title.'" >';
-		$ex_link = ' href="'.get_post_meta($id, 'ex_link', true).'" target="_blank"';
-		if(get_post_meta($id, 'ex_is_page', true)) $ex_link = ' href="'.get_the_permalink().'"';
-		$newsJa .= '<li>'.get_the_time('Y').'｜<a'.$ex_link.'>'.get_the_title().'</a> @<a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place', true).'</a>（'.get_post_meta($id, 'ex_area', true).'）</li>';
-	}
+}
 	wp_reset_postdata();
 	$newsJa .= '</ul>';
 
 ?>
 </div>
-<?php endif; ?>
+<?php endif;?>
 
 <?php get_footer(); ?>
