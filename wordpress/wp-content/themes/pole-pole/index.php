@@ -22,16 +22,19 @@
 	<?php $posttags = get_the_tags();
 	if ($posttags) {
 	foreach($posttags as $tag) {
-		$tag_name .= $tag->name.'<br>';
+		$tag_name .= '<p>'.$tag->name.'</p>';
 		}
 	}
 	?>
 <a href="<?php the_permalink(); ?>" class="work_wrapper">
 <div class="work">
 <img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
-<h3><?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?>
-<span class="year"><?php the_time('Y/n/j'); ?></span>
-<span class="tag"><?php echo $tag_name;?></span>
+<h3>
+	<p>
+	<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?>
+	</p>
+	<span class="year"><?php the_time('Y/n/j'); ?></span><br>
+	<span class="tag"><?php echo $tag_name;?></span>
 </h3>
 </div>
 </a>
