@@ -29,16 +29,14 @@
 <div id="images">
 <?php the_content(); ?>
 </div>
-<?php wp_reset_postdata()?>
+
+<!--category2-->
 <?php elseif(in_category('2')): ?>
-
 <h2><span class="jap"><?php the_title(); ?></span><span class="eng"><?php echo get_post_meta($id, 'ex_title_en', true); ?></span></h2>
-<div id="images">
-<?php get_post_meta($id, 'ex_imgs', true); ?>
-</div>
-
 <div id="outline">
-<?php if ( has_post_thumbnail() )  the_post_thumbnail('thumbnail'); ?>
+	<div id="images">
+	<?php the_content(); ?>
+	</div>
 <p class="jap">
 <?php
 	$title_ja = get_the_title();
@@ -50,6 +48,7 @@
 	}
 ?>
 「<?php echo $title_ja ?>」<br>
+<?php echo nl2br(get_post_meta($id, 'ex_text', true));?> <br>
 会場：<a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target="_blank"><?php echo get_post_meta($id, 'ex_place', true); ?></a>（<?php echo get_post_meta($id, 'ex_area', true); ?>）<br>
 会期：<?php echo get_post_meta($id, 'ex_date', true); ?>
 </p>
@@ -59,11 +58,19 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?>
 </p>
 </div>
-<?php endif; //category 2 ?>
+<?php elseif(in_category(8)): //category 2 ?>
+<p class="jap">
+<?php the_title();?>
+</p>
+<div id="images">
+<?php the_content(); ?>
+</div>
+
+<? endif; ?>
 </div><!-- #single -->
 <?php endwhile; else: ?>
 <?php endif; ?>
-
+<?php wp_reset_postdata()?>
 <?php $the_query = new WP_Query('tag='.get_the_title()); if($the_query->have_posts()): ?>
 <div id="single_archive">
 <h3>Related Stuff</h3>

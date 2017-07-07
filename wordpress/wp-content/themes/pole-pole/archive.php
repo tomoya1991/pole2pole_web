@@ -4,29 +4,26 @@
 
 <div id="archive">
 
-<?php if(is_category(array(3,4,5))): ?>
+<?php if(is_category(array(3,2,10))): ?>
 <h2>WORKS</h2>
-<div id="cat"><a href="<?php echo get_home_url(); ?>/?cat=3">All</a> / <a href="<?php echo get_home_url(); ?>/?cat=4">Solo</a> / <a href="<?php echo get_home_url(); ?>/?cat=5">Collaboration</a></div>
+<div id="cat"><a href="<?php echo get_home_url(); ?>/?cat=3">all</a> / <a href="<?php echo get_home_url(); ?>/?cat=10">design work</a> / <a href="<?php echo get_home_url(); ?>/?cat=2">exhibitions</a></div>
 <?php
-	$n = 0;
-	// $last_y = '2001';
-	while (have_posts()){
+	while (have_posts()):
 		the_post();
 		$id = get_the_ID();
-		$y = get_the_time('Y');
-		$title_en = '';
-		if(get_post_meta($id, 'title_en', true) != '') $title_en = '｜'.get_post_meta($id, 'title_en', true);
-		// if($y != $last_y){
-		// 	if($n != 0) $ul .= '</ul>';
-		// 	// $ul .= '<h3>'.$y.'</h3><ul>';
-		// }
-		$ul .= '<li><a class="self" href="'.get_the_permalink().'">'.get_the_title().$title_en.'　('.$y.') '.'</a></li>';
-		$last_y = $y;
-		$n++;
-	}
-	$ul = '<div><ul>'.$ul.'</ul></div>';
-	echo $ul;
 ?>
+<a href="<?php the_permalink(); ?>" class="work_wrapper">
+<div class="work">
+<img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
+<h3>
+	<p>
+	<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?>
+	</p>
+	<span class="year"><?php the_time('Y/n/j'); ?></span><br>
+	<span class="tag"><?php echo $tag_name;?></span>
+</h3>
+</div>
+<?php endwhile?>
 
 <?php elseif(is_category(array(8))): ?>
 <?php
