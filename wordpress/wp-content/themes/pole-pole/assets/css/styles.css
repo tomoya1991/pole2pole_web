@@ -370,13 +370,53 @@ header {
       #wrapper.narrow #works a.work_wrapper  span.year {
         float: left;
       }
-      #wrapper #content #post-2 .entry #about{
+      #wrapper #about{
+        height: 530px;
+       }
+      #wrapper #about #content{
+        width: 50%;
+        padding-left: 5%;
+        float: left;
+      }
+      #wrapper #about #designer{
+        float: left;
         padding-left: 10%;
       }
-      #wrapper #content #post-2.post .entry #about #WRchTxt7-w8c.txtNew pre.font_2 span.color_13{
-        letter-spacing: 0.1em;
+      #wrapper #about #designer ul{
+        padding-left: 10%;
+        margin-top: 35%;
+        width:150px;
+      }
+      #wrapper #about #designer li{
+        width: 100%;      
+      }
+      #wrapper #about #content #post-2 .entry h2{
+        margin: : 30px 0;
+      }
+      #wrapper #about #content #post-2 .entry #about_txt{
+        padding-left: 10%;
+      }
+      #wrapper #about #content #post-2.post .entry #about_txt  img{
+        padding: 2em 0;
       }
 
+      #wrapper #about #content #post-2.post .entry #about_txt  pre.font_2 span.color_13{
+        letter-spacing: 0.1em;
+      }
+      #wrapper.narrow #about{
+        padding: 85px 5%;
+        height: 460px;
+      }
+      #wrapper.narrow #about #content{
+        float: none;
+        padding: 0;      
+      }
+      #wrapper.narrow #about #designer{
+        padding: 1%;
+      }
+      #wrapper.narrow #about #designer ul{
+        padding-left: : 7%;
+      }
 
     footer {
       z-index: 1;
