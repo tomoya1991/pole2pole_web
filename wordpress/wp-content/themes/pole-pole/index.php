@@ -31,7 +31,7 @@
 		}
 	}
 	?>
-<a href="<?php the_permalink(); ?>" class="work_wrapper">
+<a href="https://www.instagram.com/poletopole2017/" class="work_wrapper">
 <div class="work">
 <h3>
 	<p>
