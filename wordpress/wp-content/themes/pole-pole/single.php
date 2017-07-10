@@ -4,6 +4,7 @@
 
 <!--workカテゴリー(id=3)を表示させる記述-->
 <?php if(in_category('3')): ?>
+<div id="single_all">
 <?php $slug = get_page_uri(get_the_ID()); ?>
 
 <?php if(get_post_meta($id,'back_img',true)): ?>
@@ -113,8 +114,10 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 }
 	wp_reset_postdata();
 ?>
-</div><!-- #single -->
 </div>
-<?php endif;endif;?>
+</div><!-- #single -->
+<?php endif; ?>
+</div>
+<?php endif; ?>
 
 <?php get_footer(); ?>
