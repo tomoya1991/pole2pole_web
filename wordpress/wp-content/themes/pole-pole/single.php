@@ -38,6 +38,11 @@
 <?php elseif(in_category('2')): ?>
 <h2><span class="jap"><?php the_title(); ?></span><span class="eng"><?php echo get_post_meta($id, 'ex_title_en', true); ?></span></h2>
 <div id="outline">
+
+	<?php if(get_post_meta($id,'back_img',true)): ?>
+	<div id="bg_img"><p><img src='<?php echo the_field('back_img'); ?>' alt='<?php the_title(); ?>' width="1200" height="1600" /></p></div>
+	<?php endif; ?>
+	
 	<div id="images">
 	<?php the_content(); ?>
 	</div>
