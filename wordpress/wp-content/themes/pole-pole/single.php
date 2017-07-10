@@ -133,8 +133,8 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 	wp_reset_postdata();
 ?>
 </div>
-</div>
 </div><!-- #single -->
-<?php endif;endif;?>
+<?php endif; ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>
