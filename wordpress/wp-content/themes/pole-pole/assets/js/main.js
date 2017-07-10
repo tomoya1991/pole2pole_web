@@ -51,7 +51,7 @@ $(document).ready(function() {
 		if(lng === 'en') hide = 'jap';
 		else hide = 'eng';
 		$('.eng, .jap').show();
-		$('.'+hide).hide();
+		//$('.'+hide).hide();
 	}
 	var fitNav = function(){
 		if(860 < getSize().w){
@@ -101,7 +101,7 @@ $(document).ready(function() {
 	});
 
 	var init = function(){
-		fitImgW();
+		//fitImgW();
 		fitNav();
 		if(window.location.hash === '')
 			switchLang(browserLanguage());
@@ -119,7 +119,7 @@ $(document).ready(function() {
 
 	$(window)
 		.on('resize', function(){
-			fitImgW();
+			//fitImgW();
 			fitNav();
 		})
 		.on('scroll',function(){
