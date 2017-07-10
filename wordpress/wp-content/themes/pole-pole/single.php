@@ -13,17 +13,28 @@
 
 <h2><?php the_title(); ?>
 <?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?></h2>
-<div id="video">
-<?php
-	if(get_post_meta($id, 'video_url', true) != ''){
-		echo wp_oembed_get(get_post_meta($id, 'video_url', true));
-	} else {
-		the_post_thumbnail('medium');
-	}
-?>
+<div class="work">
+<?php if(get_post_meta($id, 'video_url', true) != ''): ?>
+	<h3>
+		<p>
+		<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?>
+		</p>
+		<span class="year"><?php the_time('Y/n/j'); ?></span><br>
+	</h3>
+	<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
+<?php else: ?>
+	<h3>
+		<p>
+		<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?>
+		</p>
+		<span class="year"><?php the_time('Y/n/j'); ?></span><br>
+	</h3>
+		<?php the_post_thumbnail('medium'); ?>
+
+<?php endif; ?>
+</div>
 <div id="images">
 <?php the_content(); ?>
-</div>
 </div>
 <div id="outline">
 <p class="jap">
@@ -87,6 +98,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 <?php endwhile; else: ?>
 <?php endif; ?>
 <?php wp_reset_postdata()?>
+
 <?php if($slug != ''): ?>
 <?php $the_query = new WP_Query('tag='.$slug); if($the_query->have_posts()): ?>
 <div id="single_archive">
@@ -96,10 +108,19 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 	while ($the_query->have_posts()){
 		$the_query->the_post();
 		$id = get_the_ID();
+?>
+<div class="work">
+<h3>
+	<p>
+	<?php the_title(); ?>
+	</p>
+	<span class="year"><?php the_time('Y/n/j'); ?></span><br>
+	<span class="tag"><?php echo $tag_name;?></span>
+</h3>
 
-		$args = array(
+		<?php $args = array(
 	 'post_type'   => 'attachment',
-	 'numberposts' => 5,
+	 'numberposts' => 1,
 	 'post_status' => null,
 	 'post_parent' => $id
  );
@@ -107,8 +128,6 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
  if ( $attachments ) {
 	 foreach ( $attachments as $attachment ) {
 		 echo wp_get_attachment_image( $attachment->ID, 'midium' );
-		 echo '<p>';
-		 echo '</p>';
 	 }
  }
 }
