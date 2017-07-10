@@ -135,6 +135,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 </div>
 </div><!-- #single -->
 <?php endif; ?>
+</div>
 <?php endif; ?>
 
 <?php get_footer(); ?>
