@@ -2,7 +2,7 @@
 
 <?php if (have_posts()) : ?>
 
-<div id="archive">
+<div id="works">
 
 <?php if(is_category(array(3,2,10))): ?>
 <h2>category</h2>

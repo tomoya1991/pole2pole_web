@@ -39,7 +39,9 @@ html[lang="en"] body {
 body {
   font-family: 'Yantramanav', "游ゴシック体", "Yu Gothic", Arial, sans-serif;
   color: #0b2c67;
-  background-color: #fff; }
+  background-color: #fff;
+  margin: 0;
+   }
 
 body.win {
   font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
@@ -321,8 +323,10 @@ header {
   #wrapper ul li {
     line-height: 1.2em;
     padding-bottom: 10px; }
-  #wrapper .contents {
-    width: 960px; }
+/*  #wrapper .contents {
+    width: 960px; }*/
+  #wrapper #works #cat ul {
+    padding-left:0px;  }
   #wrapper #news {
     padding-bottom: 10px; }
   #wrapper #works a.work_wrapper {
@@ -361,8 +365,17 @@ header {
       #wrapper #works a.work_wrapper h3 span.tag p{
           margin: 0 0;
          }
-  #wrapper #single #images img {
-    padding-bottom: 5px; }
+  #wrapper #single #single.content{
+    width: 100%;
+  }
+  #wrapper #single{
+    margin-top:60%;
+    background: #ffffff;
+  }
+  #wrapper #single #outline {
+    width: 60%;
+    margin: 0 auto;
+    }
   #wrapper.narrow {
     padding-top: 75px;
     font-size: 0.8em; }
@@ -431,6 +444,7 @@ header {
         padding-left: : 7%;
       }
 
+
     footer {
       z-index: 1;
       color:#999999;
@@ -438,6 +452,7 @@ header {
       width: 100%;
       margin: 4em 0 0;
       overflow: hidden;
+      background: #ffffff;
     }
     footer #footer_img{
       margin: 0 auto;
