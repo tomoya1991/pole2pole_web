@@ -5,8 +5,16 @@
 <div id="archive">
 
 <?php if(is_category(array(3,2,10))): ?>
-<h2>WORKS</h2>
-<div id="cat"><a href="<?php echo get_home_url(); ?>/?cat=3">all</a> / <a href="<?php echo get_home_url(); ?>/?cat=10">design work</a> / <a href="<?php echo get_home_url(); ?>/?cat=2">exhibitions</a></div>
+<h2>category</h2>
+<div id="cat">
+	<ul>
+		<li><a href="<?php echo get_home_url(); ?>/?cat=3">all</a>  </li>
+		<li><a href="<?php echo get_home_url(); ?>/?cat=10">design work</a> </li> 
+		<li><a href="<?php echo get_home_url(); ?>/?cat=2">exhibitions</a></li>
+	</ul>
+</div>
+<h2>works</h2>
+
 <?php
 	while (have_posts()):
 		the_post();
