@@ -138,8 +138,12 @@ h2 {
 
 #cat {
   font-size: 0.8em;
-  padding-bottom: 20px; }
-
+  padding: 10%; 
+}
+#cat ul a{
+  list-style: none;
+  text-decoration: none;
+ }
 #nav_mob_layer {
   z-index: 9;
   width: 100%;
