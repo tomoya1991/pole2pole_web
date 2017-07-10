@@ -368,9 +368,16 @@ header {
   #wrapper #single #single.content{
     width: 100%;
   }
-  #wrapper #single{
+  #wrapper #single_all{
     margin-top:60%;
     background: #ffffff;
+  }
+    #single_all #video #images p img{
+      width: 60%;
+      height: 60%;
+    }
+  #wrapper #single #video p{
+    text-align: center;
   }
   #wrapper #single #outline {
     width: 60%;
