@@ -36,13 +36,17 @@
 
 <!--category2-->
 <?php elseif(in_category('2')): ?>
-<h2><span class="jap"><?php the_title(); ?></span><span class="eng"><?php echo get_post_meta($id, 'ex_title_en', true); ?></span></h2>
+<?php if(get_post_meta($id,'ex_title_en',true) != ''): ?>
+<h2><span class="jap"><?php the_title(); ?></span>／<span class="eng"><?php echo get_post_meta($id, 'ex_title_en', true); ?></span></h2>
+<?php else: ?>
+<h2><span class="jap"><?php the_title(); ?></span></h2>
+<?php endif; ?>
 <div id="outline">
 
 	<?php if(get_post_meta($id,'back_img',true)): ?>
 	<div id="bg_img"><p><img src='<?php echo the_field('back_img'); ?>' alt='<?php the_title(); ?>' width="1200" height="1600" /></p></div>
 	<?php endif; ?>
-	
+
 	<div id="images">
 	<?php the_content(); ?>
 	</div>
@@ -58,13 +62,16 @@
 ?>
 「<?php echo $title_ja ?>」<br>
 <?php echo nl2br(get_post_meta($id, 'ex_text', true));?> <br>
+<br>
+<?php echo nl2br(get_post_meta($id, 'ex_text_en', true));?> <br>
+<br>
 会場：<a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target="_blank"><?php echo get_post_meta($id, 'ex_place', true); ?></a>（<?php echo get_post_meta($id, 'ex_area', true); ?>）<br>
 会期：<?php echo get_post_meta($id, 'ex_date', true); ?>
 </p>
 <p class="eng">
 Title: <?php echo $title_en; ?><br>
 Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target="_blank"><?php echo get_post_meta($id, 'ex_place_en', true); ?></a>（<?php echo get_post_meta($id, 'ex_area_en', true); ?>）<br>
-Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?>
+<!-- Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?> -->
 </p>
 </div>
 <?php elseif(in_category(8)): //category 2 -> category 8 ?>
@@ -76,7 +83,6 @@ Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?>
 </div>
 <?php echo nl2br(get_post_meta($id, 'news_text', true));?> <br>
 <? endif; ?>
-</div><!-- #single -->
 <?php endwhile; else: ?>
 <?php endif; ?>
 <?php wp_reset_postdata()?>
@@ -107,6 +113,7 @@ Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?>
 }
 	wp_reset_postdata();
 ?>
+</div><!-- #single -->
 </div>
 <?php endif;endif;?>
 

@@ -8,7 +8,11 @@
 		$the_query->the_post();
 		$id = get_the_ID();
 		if(get_post_meta($id, 'ex_close_date', true) != '' && date_i18n('Y-m-d H:i:s') < get_post_meta($id, 'ex_close_date', true)){
-			$newsJa .= '<li><a href="'.get_post_meta($id, 'ex_link', true).'" target="_blank">'.get_the_title().'</a> @<a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place', true).'</a>（'.get_post_meta($id, 'ex_area', true).'）｜'.get_post_meta($id, 'ex_date', true).'</li>';
+			if(get_post_meta($id, 'ex_link', true) != ''){
+			$newsJa .= '<li><a href="'.get_post_meta($id, 'ex_link', true).'" target="_blank">'.get_the_title().'</a>  at  <a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place', true).'</a> '.get_post_meta($id, 'ex_area', true).'／'.get_post_meta($id, 'ex_date', true).'</li>';
+			}else{
+			$newsJa .= '<li><a href="'.get_the_permalink().'" target="_blank">'.get_the_title().'</a>  at  <a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place', true).'</a> '.get_post_meta($id, 'ex_area', true).'／'.get_post_meta($id, 'ex_date', true).'</li>';
+			}
 		}
 	}
 	$upcom = '<div id="upcom"><h2>upcomming</h2>'.$newsJa.'</div>';
