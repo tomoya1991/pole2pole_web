@@ -365,10 +365,10 @@ header {
       #wrapper #works a.work_wrapper h3 span.tag p{
           margin: 0 0;
          }
-  #wrapper #single_all #single.content{
+  #wrapper #single #single.content{
     width: 100%;
   }
-  #wrapper #single_all{
+  #wrapper #single{
     margin-top:60%;
     background: #ffffff;
   }
