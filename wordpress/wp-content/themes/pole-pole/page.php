@@ -22,22 +22,22 @@
 			<?php if (get_field('member_img_1')): ?>
 			<li><img src='<?php echo the_field('member_img_1'); ?>' alt=' ' /></li>
 			<?php endif; ?>
-			<p><?php if (get_field('member_text_1')): ?></p>
-			<li><p><?php echo nl2br(the_field('member_text_1')); ?></p></li>
+			<?php if (get_field('member_text_1')): ?>
+			<p><?php echo nl2br(the_field('member_text_1')); ?></p>
 			<?php endif; ?>
 			<li><a href=""></a>Yasunobu SHIMIZUDANI</li>
 			<?php if (get_field('member_img_1')): ?>
 			<li><img src='<?php echo the_field('member_img_2'); ?>' alt=' ' /></li>
 			<?php endif; ?>
-			<p><?php if (get_field('member_text_2')): ?></p>
-			<li><p><?php echo nl2br(the_field('member_text_2')); ?></p></li>
+			<?php if (get_field('member_text_2')): ?>
+			<p><?php echo nl2br(the_field('member_text_2')); ?></p>
 			<?php endif; ?>
 			<li><a href=""></a>Masashi KONDO</li>
 			<?php if (get_field('member_img_1')): ?>
 			<li><img src='<?php echo the_field('member_img_3'); ?>' alt=' ' /></li>
 			<?php endif; ?>
-			<p><?php if (get_field('member_text_3')): ?></p>
-			<li><p><?php echo nl2br(the_field('member_text_3')); ?></p></li>
+			<?php if (get_field('member_text_3')): ?>
+			<p><?php echo nl2br(the_field('member_text_3')); ?></p>
 			<?php endif; ?>
 		</ul>
 		<?php endwhile; endif; ?>
