@@ -53,21 +53,19 @@
 <?php $id = get_the_ID(); ?>
 <?php if(get_post_meta($id,show_to_top,true)): ?>
 <h2>works</h2>
-<a href="<?php the_permalink(); ?>" class="work_wrapper">
-<div class="work">
-<h3>
-	<p>
-	<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?>
-	</p>
-	<span class="year"><?php the_time('Y/n/j'); ?></span><br>
-	<span class="tag"><?php echo $tag_name;?></span>
-</h3>
-
-<img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
-</div>
-</a>
+	<a href="<?php the_permalink(); ?>" class="work_wrapper">
+		<div class="work">
+			<h3>
+				<p>
+				<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?>
+				</p>
+				<span class="year"><?php the_time('Y/n/j'); ?></span><br>
+				<span class="tag"><?php echo $tag_name;?></span>
+			</h3>
+			<img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
+		</div>
+	</a>
 <?php endif; ?>
-</div><!-- #works -->
 <?php endwhile; ?>
 <?php endif; ?>
 <?php else : ?>
