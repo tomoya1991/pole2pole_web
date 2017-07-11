@@ -8,7 +8,7 @@
 <?php $slug = get_page_uri(get_the_ID()); ?>
 
 <?php if(get_post_meta($id,'back_img',true)): ?>
-<div id="bg_img"><p><img src='<?php echo the_field('back_img'); ?>' alt='<?php the_title(); ?>' width="1200" height="1600" /></p></div>
+<div id="bg_img"><p><img src='<?php echo the_field('back_img'); ?>' alt='<?php the_title(); ?>' /></p></div>
 <?php endif; ?>
 
 <h2><?php the_title(); ?>
