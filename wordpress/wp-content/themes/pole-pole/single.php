@@ -7,8 +7,15 @@
 <div id="single_all">
 <?php $slug = get_page_uri(get_the_ID()); ?>
 
-<?php if(get_post_meta($id,'back_img',true)): ?>
-<div id="bg_img"><p><img src='<?php echo the_field('back_img'); ?>' alt='<?php the_title(); ?>' /></p></div>
+<?php $BgImg = get_field('back_img');
+			if(!empty($BgImg)):
+				if(strlen($BgImg)<5){
+				$bg_url = $BgImg['url'];
+			}else{
+				$bg_url = $BgImg;
+			}
+?>
+<div id="bg_img"><p><img src='<?php echo $bg_url; ?>' alt='<?php the_title(); ?>' /></p></div>
 <?php endif; ?>
 
 
@@ -47,6 +54,7 @@
 
 <!--category2-->
 <?php elseif(in_category('2')): ?>
+	<div id="single_all">
 <?php if(get_post_meta($id,'ex_title_en',true) != ''): ?>
 <h2><span class="jap"><?php the_title(); ?></span>／<span class="eng"><?php echo get_post_meta($id, 'ex_title_en', true); ?></span></h2>
 <?php else: ?>
@@ -54,8 +62,15 @@
 <?php endif; ?>
 <div id="outline">
 
-	<?php if(get_post_meta($id,'back_img',true)): ?>
-	<div id="bg_img"><p><img src='<?php echo the_field('back_img'); ?>' alt='<?php the_title(); ?>' width="1200" height="1600" /></p></div>
+	<?php $BgImg = get_field('back_img');
+				if(!empty($BgImg)):
+					if(strlen($BgImg)<5){
+					$bg_url = $BgImg['url'];
+				}else{
+					$bg_url = $BgImg;
+				}
+	?>
+	<div id="bg_img"><p><img src='<?php echo $bg_url; ?>' alt='<?php the_title(); ?>' /></p></div>
 	<?php endif; ?>
 
 	<div id="images">
@@ -85,6 +100,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 <!-- Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?> -->
 </p>
 </div>
+</div>
 <?php elseif(in_category(8)): //category 2 -> category 8 ?>
 <p class="jap">
 <?php the_title();?>
@@ -102,13 +118,12 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 <?php $the_query = new WP_Query('tag='.$slug); if($the_query->have_posts()): ?>
 <div id="single_archive">
 	<h2>Related Stuff</h2>
+	<div class="work">
 	<?php
-		$newsJa = '<ul class="jap">';
 		while ($the_query->have_posts()){
 			$the_query->the_post();
 			$id = get_the_ID();
 	?>
-	<div class="work">
 		<h3>
 			<p>
 			<?php the_title(); ?>
@@ -119,14 +134,15 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 
 				<?php $args = array(
 			 'post_type'   => 'attachment',
-			 'numberposts' => 1,
+			 'numberposts' => 3,
 			 'post_status' => null,
 			 'post_parent' => $id
 		 );
 		 $attachments = get_posts( $args );
 		 if ( $attachments ) {
 			 foreach ( $attachments as $attachment ) {
-				 echo wp_get_attachment_image( $attachment->ID, 'midium' );
+				 $img_url = wp_get_attachment_image_src( $attachment->ID, 'midium', false );
+				 echo '<img src="'.$img_url[0].'" alt="" />';
 			 }
 		 }
 		}
