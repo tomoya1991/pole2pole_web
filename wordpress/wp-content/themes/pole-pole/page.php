@@ -18,6 +18,7 @@
 	<div id="designer">
 		<h2>designer</h2>
 		<ul>
+		<div class="hitori">
 			<li><a href=""></a>Yuuji HIROSE</li>
 			<?php if (get_field('member_img_1')): ?>
 			<li><img src='<?php echo the_field('member_img_1'); ?>' alt=' ' /></li>
@@ -25,6 +26,8 @@
 			<?php if (get_field('member_text_1')): ?>
 			<p><?php echo nl2br(the_field('member_text_1')); ?></p>
 			<?php endif; ?>
+		</div>
+		<div class="hitori">
 			<li><a href=""></a>Yasunobu SHIMIZUDANI</li>
 			<?php if (get_field('member_img_1')): ?>
 			<li><img src='<?php echo the_field('member_img_2'); ?>' alt=' ' /></li>
@@ -32,6 +35,8 @@
 			<?php if (get_field('member_text_2')): ?>
 			<p><?php echo nl2br(the_field('member_text_2')); ?></p>
 			<?php endif; ?>
+		</div>
+		<div class="hitori">
 			<li><a href=""></a>Masashi KONDO</li>
 			<?php if (get_field('member_img_1')): ?>
 			<li><img src='<?php echo the_field('member_img_3'); ?>' alt=' ' /></li>
@@ -39,6 +44,7 @@
 			<?php if (get_field('member_text_3')): ?>
 			<p><?php echo nl2br(the_field('member_text_3')); ?></p>
 			<?php endif; ?>
+		</div>
 		</ul>
 		<?php endwhile; endif; ?>
 	</div><!-- /designer-->
