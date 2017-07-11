@@ -11,8 +11,7 @@
 <div id="bg_img"><p><img src='<?php echo the_field('back_img'); ?>' alt='<?php the_title(); ?>' width="1200" height="1600" /></p></div>
 <?php endif; ?>
 
-<h2><?php the_title(); ?>
-<?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?></h2>
+
 <div class="work">
 <?php if(get_post_meta($id, 'video_url', true) != ''): ?>
 	<h3>
@@ -21,8 +20,8 @@
 		</p>
 		<span class="year"><?php the_time('Y/n/j'); ?></span><br>
 	</h3>
-	<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
-<?php else: ?>
+		<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
+		<?php else: ?>
 	<h3>
 		<p>
 		<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?>
@@ -102,39 +101,38 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 <?php if($slug != ''): ?>
 <?php $the_query = new WP_Query('tag='.$slug); if($the_query->have_posts()): ?>
 <div id="single_archive">
-<h3>Related Stuff</h3>
-<?php
-	$newsJa = '<ul class="jap">';
-	while ($the_query->have_posts()){
-		$the_query->the_post();
-		$id = get_the_ID();
-?>
-<div class="work">
-<h3>
-	<p>
-	<?php the_title(); ?>
-	</p>
-	<span class="year"><?php the_time('Y/n/j'); ?></span><br>
-	<span class="tag"><?php echo $tag_name;?></span>
-</h3>
+	<h2>Related Stuff</h2>
+	<?php
+		$newsJa = '<ul class="jap">';
+		while ($the_query->have_posts()){
+			$the_query->the_post();
+			$id = get_the_ID();
+	?>
+	<div class="work">
+		<h3>
+			<p>
+			<?php the_title(); ?>
+			</p>
+			<span class="year"><?php the_time('Y/n/j'); ?></span><br>
+			<span class="tag"><?php echo $tag_name;?></span>
+		</h3>
 
-		<?php $args = array(
-	 'post_type'   => 'attachment',
-	 'numberposts' => 1,
-	 'post_status' => null,
-	 'post_parent' => $id
- );
- $attachments = get_posts( $args );
- if ( $attachments ) {
-	 foreach ( $attachments as $attachment ) {
-		 echo wp_get_attachment_image( $attachment->ID, 'midium' );
-	 }
- }
-}
-	wp_reset_postdata();
-?>
-</div>
-</div><!-- #single -->
+				<?php $args = array(
+			 'post_type'   => 'attachment',
+			 'numberposts' => 1,
+			 'post_status' => null,
+			 'post_parent' => $id
+		 );
+		 $attachments = get_posts( $args );
+		 if ( $attachments ) {
+			 foreach ( $attachments as $attachment ) {
+				 echo wp_get_attachment_image( $attachment->ID, 'midium' );
+			 }
+		 }
+		}
+			wp_reset_postdata();
+		?>
+	</div><!-- #single -->
 <?php endif; ?>
 </div>
 <?php endif; ?>
