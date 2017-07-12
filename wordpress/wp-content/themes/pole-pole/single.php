@@ -2,11 +2,21 @@
 <div id="single" class="contents">
 <?php if (have_posts()) : while (have_posts()) : the_post(); $id=get_the_ID(); ?>
 
-<!--workカテゴリー(id=3)を表示させる記述-->
+<!--ワーク  catecory-3-->
 <?php if(in_category('3')): ?>
+
+	<!--タイトルと日付-->
+	<div id="work_info">
+		<h4>
+		<?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?>
+	  <span class="year"><?php the_time('Y/n/j'); ?></span>
+		</h4>
+	</div>
+
 <div id="single_all">
 <?php $slug = get_page_uri(get_the_ID()); ?>
 
+<!--背景画像を取得-->
 <?php $BgImg = get_field('back_img');
 			if(!empty($BgImg)):
 				if(strlen($BgImg)<5){
@@ -15,28 +25,16 @@
 				$bg_url = $BgImg;
 			}
 ?>
+<!--背景画像を表示-->
 <div id="bg_img"><p><img src='<?php echo $bg_url; ?>' alt='<?php the_title(); ?>' /></p></div>
 <?php endif; ?>
 
 
 <div class="work">
 <?php if(get_post_meta($id, 'video_url', true) != ''): ?>
-	<h3>
-		<p>
-		<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?>
-		</p>
-		<span class="year"><?php the_time('Y/n/j'); ?></span><br>
-	</h3>
 		<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
 		<?php else: ?>
-	<h3>
-		<p>
-		<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?>
-		</p>
-		<span class="year"><?php the_time('Y/n/j'); ?></span><br>
-	</h3>
 		<?php the_post_thumbnail('medium'); ?>
-
 <?php endif; ?>
 </div>
 <div id="images">
@@ -52,16 +50,16 @@
 </div>
 <br>
 
-<!--category2-->
+<!--エキシビジョン　category2-->
 <?php elseif(in_category('2')): ?>
-	<div id="single_all">
-<?php if(get_post_meta($id,'ex_title_en',true) != ''): ?>
-<h2><span class="jap"><?php the_title(); ?></span>／<span class="eng"><?php echo get_post_meta($id, 'ex_title_en', true); ?></span></h2>
-<?php else: ?>
-<h2><span class="jap"><?php the_title(); ?></span></h2>
-<?php endif; ?>
-<div id="outline">
-
+	<!--タイトルと日付-->
+	<div id="work_info">
+		<h4>
+		<?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '／'.get_post_meta($id, 'ex_title_en', true); ?>
+	  <span class="year"><?php the_time('Y/n/j'); ?></span>
+		</h4>
+	</div>
+	<!--背景画像を取得-->
 	<?php $BgImg = get_field('back_img');
 				if(!empty($BgImg)):
 					if(strlen($BgImg)<5){
@@ -70,12 +68,25 @@
 					$bg_url = $BgImg;
 				}
 	?>
+	<!--背景画像を表示-->
 	<div id="bg_img"><p><img src='<?php echo $bg_url; ?>' alt='<?php the_title(); ?>' /></p></div>
 	<?php endif; ?>
+
+	<div id="single_all">
+
+		<div class="work">
+		<?php if(get_post_meta($id, 'video_url', true) != ''): ?>
+				<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
+				<?php else: ?>
+				<?php the_post_thumbnail('medium'); ?>
+		<?php endif; ?>
+		</div>
+
 
 	<div id="images">
 	<?php the_content(); ?>
 	</div>
+	<div id="outline">
 <p class="jap">
 <?php
 	$title_ja = get_the_title();
@@ -146,10 +157,17 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 			 }
 		 }
 		 echo "</div>";
+<<<<<<< HEAD
 		}
 			wp_reset_postdata();
 		?>
-	
+
+=======
+	 }
+		 wp_reset_postdata();
+	 ?>
+ 		 
+>>>>>>> c82514ae8d854849ed78e04c9abba4dd455229b2
 <?php endif; ?>
 </div>
 <?php endif; ?>
