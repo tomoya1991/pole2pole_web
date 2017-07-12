@@ -140,7 +140,7 @@ h2 {
 
 #cat {
   font-size: 0.8em;
-  padding: 10%;
+  padding: 10%; 
 }
 #cat ul a{
   list-style: none;
@@ -367,21 +367,36 @@ header {
           font-size:0.8em;
           color: #999999;
          }
-         3 span.category{
-               text-align: right;
-               font-size:0.8em;
-               color: #999999;
-              }
     h3 span.tag p{
           margin: 0 0;
          }
     #wrapper.narrow h3{
       margin: 10px 0px;
     }
+    h4 p{
+      background: rgba(255,255,255,0.6);
+      text-align: left;
+      padding-left: 1em;
+    }  
+    h4 p.title{
+      font-size: 2em;
+    }  
+    h4 p.year{
+      width: 50%;
+    }
+
   #work_info{
-    padding:100px 20px;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    top:410px;
+    width: 70%;
     z-index: 2;
+    letter-spacing: 1em;
     position:absolute;
+  }
+  #wrapper.narrow #work_info p{
+    font-size: 1.5em;
   }
   #single.contents{
     margin-top: -100px;
@@ -396,6 +411,16 @@ header {
       width: 70%;
       height: 70%;
     }
+    #wrapper.narrow #single_all #images p img{
+      width: 80%;
+      height: 80%;
+    }
+    #wrapper.narrow #single_all h2{
+      margin: 30px 0;
+      }
+     #wrapper.narrow #single_archive .work p{
+      text-align:left;
+    }
     #single_all #images p{
     text-align: center;
   }
@@ -405,6 +430,10 @@ header {
       letter-spacing: 0.3em;
       font-size: 0.8em;
     }
+  #wrapper.narrow #single #outline {
+    width: 80%;
+    }
+
   #wrapper #single #outline {
     width: 70%;
     margin: 0 auto;
@@ -414,8 +443,19 @@ header {
       padding: 10% 0;
     }
     #single_archive .work img{
-      max-width: 50%;
+      width: 50%;
     }
+     #wrapper.narrow #single_archive{
+      width: 80%;
+      margin: 0 auto;
+    }
+    #wrapper.narrow #single_archive .work img{
+      width: 100%;
+    }
+     #wrapper.narrow #single_archive .work h3 span{
+      float: left;
+    }
+
   #wrapper.narrow {
     padding-top: 75px;
     font-size: 0.8em; }
@@ -432,7 +472,7 @@ header {
       #wrapper.narrow #works a.work_wrapper  p {
         text-align: left;
       }
-      #wrapper.narrow #works a.work_wrapper  span.year {
+      #wrapper.narrow #works a.work_wrapper  span{
         float: left;
       }
       #wrapper #about{
