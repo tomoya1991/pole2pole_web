@@ -156,10 +156,10 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 				 echo '<img src="'.$img_url[0].'" alt="" />';
 			 }
 		 }
-
+		 echo '</div>';
+	 }
 			wp_reset_postdata();
-			echo '</div>';
-endwhile; ?>
+ ?>
 	</div><!-- #single -->
 <?php endif; ?>
 </div>
