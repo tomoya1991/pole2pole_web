@@ -380,6 +380,9 @@ header {
     margin-top:60%;
     background: #ffffff;
   }
+    #single_all #images{
+      padding-top: 50px;
+    }
     #single_all #images p img{
       width: 70%;
       height: 70%;
@@ -397,6 +400,9 @@ header {
     width: 70%;
     margin: 0 auto;
     margin-top: 30px;
+    }
+    #single_archive .work{
+      padding: 10% 0;
     }
     #single_archive .work img{
       max-width: 50%;

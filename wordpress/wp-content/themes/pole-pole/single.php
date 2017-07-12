@@ -118,12 +118,12 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 <?php $the_query = new WP_Query('tag='.$slug); if($the_query->have_posts()): ?>
 <div id="single_archive">
 	<h2>Related Stuff</h2>
-	<div class="work">
 	<?php
 		while ($the_query->have_posts()){
 			$the_query->the_post();
 			$id = get_the_ID();
 	?>
+	<div class="work">
 		<h3>
 			<p>
 			<?php the_title(); ?>
@@ -134,7 +134,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 
 				<?php $args = array(
 			 'post_type'   => 'attachment',
-			 'numberposts' => 3,
+			 'numberposts' => 1,
 			 'post_status' => null,
 			 'post_parent' => $id
 		 );
@@ -145,10 +145,11 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 				 echo '<img src="'.$img_url[0].'" alt="" />';
 			 }
 		 }
+		 echo "</div>";
 		}
 			wp_reset_postdata();
 		?>
-	</div><!-- #single -->
+	
 <?php endif; ?>
 </div>
 <?php endif; ?>
