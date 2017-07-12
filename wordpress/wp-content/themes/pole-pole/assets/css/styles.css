@@ -363,7 +363,7 @@ header {
         color: #999999;
          }
     h3 span.tag{
-          text-align: right;
+          float: right;
           font-size:0.8em;
           color: #999999;
          }
@@ -376,7 +376,7 @@ header {
     h4 p{
       background: rgba(255,255,255,0.6);
       text-align: left;
-      padding-left: 1em;
+      padding-left: 10px;
     }  
     h4 p.title{
       font-size: 2em;
