@@ -130,7 +130,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 <div id="single_archive">
 	<h2>Related Stuff</h2>
 	<?php
-		while ($the_query->have_posts()):
+		while ($the_query->have_posts()){
 			$the_query->the_post();
 			$id = get_the_ID();
 	?>
@@ -156,11 +156,11 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 				 echo '<img src="'.$img_url[0].'" alt="" />';
 			 }
 		 }
-		 echo '</div>';
+		 echo "</div>";
 	 }
 			wp_reset_postdata();
  ?>
-	</div><!-- #single -->
+ 
 <?php endif; ?>
 </div>
 <?php endif; ?>
