@@ -140,7 +140,7 @@ h2 {
 
 #cat {
   font-size: 0.8em;
-  padding: 10%; 
+  padding: 10%;
 }
 #cat ul a{
   list-style: none;
@@ -367,6 +367,11 @@ header {
           font-size:0.8em;
           color: #999999;
          }
+         3 span.category{
+               text-align: right;
+               font-size:0.8em;
+               color: #999999;
+              }
     h3 span.tag p{
           margin: 0 0;
          }

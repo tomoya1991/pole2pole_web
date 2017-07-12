@@ -5,16 +5,15 @@
 <!--ワーク  catecory-3-->
 <?php if(in_category('3')): ?>
 
-
-
-<div id="single_all">
 	<!--タイトルと日付-->
 	<div id="work_info">
 		<h4>
-		<p><?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?></p>
+		<?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?>
 	  <span class="year"><?php the_time('Y/n/j'); ?></span>
 		</h4>
 	</div>
+
+<div id="single_all">
 <?php $slug = get_page_uri(get_the_ID()); ?>
 
 <!--背景画像を取得-->
@@ -113,6 +112,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 </p>
 </div>
 </div>
+
 <?php elseif(in_category(8)): //category 2 -> category 8 ?>
 <p class="jap">
 <?php the_title();?>
@@ -134,31 +134,30 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 		while ($the_query->have_posts()){
 			$the_query->the_post();
 			$id = get_the_ID();
+			$img_str = get_the_content();
+  		 $img_path = explode('"', $img_str);
+  		 if (strpbrk($img_path[3], '.jpg') || strpbrk($img_path[3], '.jpeg')){
+				 $post_category = get_the_category();
+				 if(in_category(array(2,8))):
 	?>
+	<a href="<?php the_permalink(); ?>">
+	<?php elseif(in_category('13')): ?>
+	<a href="https://www.instagram.com/poletopole2017/">
+	<?php endif; ?>
 	<div class="work">
 		<h3>
 			<p>
-			<?php the_title(); ?>
+			<?php
+			 the_title();
+			 ?>
 			</p>
 			<span class="year"><?php the_time('Y/n/j'); ?></span><br>
-			<span class="tag"><?php echo $tag_name;?></span>
+			<span class="tag"><?php echo $post_category[0]->cat_name;?></span>
 		</h3>
-
-				<?php $args = array(
-			 'post_type'   => 'attachment',
-			 'numberposts' => 1,
-			 'post_status' => null,
-			 'post_parent' => $id
-		 );
-		 $attachments = get_posts( $args );
-		 if ( $attachments ) {
-			 foreach ( $attachments as $attachment ) {
-				 $img_url = wp_get_attachment_image_src( $attachment->ID, 'midium', false );
-				 echo '<img src="'.$img_url[0].'" alt="" />';
-			 }
-		 }
-		 echo "</div>";
-
+	<?php
+		 echo '<img src="'.$img_path[3].'" alt="" />';
+	 }
+		 echo "</div></a>";
 		}
 			wp_reset_postdata();
 		?>
