@@ -8,8 +8,8 @@
 	<!--タイトルと日付-->
 	<div id="work_info">
 		<h4>
-		<?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?>
-	  <span class="year"><?php the_time('Y/n/j'); ?></span>
+		<p class="title"><?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?></p>
+	  <p class="year"><?php the_time('Y/n/j'); ?></p>
 		</h4>
 	</div>
 
@@ -55,8 +55,8 @@
 	<!--タイトルと日付-->
 	<div id="work_info">
 		<h4>
-		<?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '／'.get_post_meta($id, 'ex_title_en', true); ?>
-	  <span class="year"><?php the_time('Y/n/j'); ?></span>
+		<p class="title"><?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '／'.get_post_meta($id, 'ex_title_en', true); ?></p>
+	  <p class="year"><?php the_time('Y/n/j'); ?></p>
 		</h4>
 	</div>
 	<!--背景画像を取得-->
