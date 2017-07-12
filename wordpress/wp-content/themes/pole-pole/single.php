@@ -157,17 +157,11 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 			 }
 		 }
 		 echo "</div>";
-<<<<<<< HEAD
+
 		}
 			wp_reset_postdata();
 		?>
 
-=======
-	 }
-		 wp_reset_postdata();
-	 ?>
- 		 
->>>>>>> c82514ae8d854849ed78e04c9abba4dd455229b2
 <?php endif; ?>
 </div>
 <?php endif; ?>
