@@ -312,11 +312,11 @@ header {
   text-decoration: none;
 }
 #bg_img{
-  z-index: -1;
+  z-index: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: fixed;
+  position: relative;
   left: 0;
   top: 0;
 }
@@ -373,12 +373,16 @@ header {
     #wrapper.narrow h3{
       margin: 10px 0px;
     }
-  #wrapper #single #single.content{
-    width: 100%;
+  #work_info{
+    padding:100px 20px;
+    z-index: 2;
+    position:absolute;
+  }
+  #single.contents{
+    margin-top: -100px;
   }
   #wrapper #single_all{
-    margin-top:60%;
-    background: #ffffff;
+   background: #ffffff;
   }
     #single_all #images{
       padding-top: 50px;
