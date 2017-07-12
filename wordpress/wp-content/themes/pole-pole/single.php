@@ -11,8 +11,8 @@
 	<!--タイトルと日付-->
 	<div id="work_info">
 		<h4>
-		<p><?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?></p>
-	  <span class="year"><?php the_time('Y/n/j'); ?></span>
+		<p class="title"><?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?></p>
+	  <p class="year"><?php the_time('Y/n/j'); ?></p>
 		</h4>
 	</div>
 <?php $slug = get_page_uri(get_the_ID()); ?>
