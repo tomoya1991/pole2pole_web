@@ -157,9 +157,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 			 }
 		 }
 		 echo "</div>";
-	 }
-			wp_reset_postdata();
-	 ?>
+
 <?php endif; ?>
 </div>
 <?php endif; ?>
