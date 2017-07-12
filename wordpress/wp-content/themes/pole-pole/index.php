@@ -23,7 +23,7 @@
 <div id="works">
 <h2>news</h2>
 <?php query_posts('posts_per_page=3'); ?>
-<?php while (have_posts()) : the_post(); if(in_category('8')): $id=get_the_ID();?>
+<?php while (have_posts()) : the_post(); if(in_category(array(8,13))): $id=get_the_ID();?>
 	<?php $posttags = get_the_tags();
 	if ($posttags) {
 	foreach($posttags as $tag) {
@@ -31,16 +31,19 @@
 		}
 	}
 	?>
+<?php if(in_category(13)): ?>
 <a href="https://www.instagram.com/poletopole2017/" class="work_wrapper">
+<?php elseif(in_category(8)): ?>
+	<a href="<?php the_permalink(); ?>" class="work_wrapper">
+<?php endif; ?>
 <div class="work">
 <h3>
 	<p>
-	<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?>
+	<?php the_title(); ?>
 	</p>
 	<span class="year"><?php the_time('Y/n/j'); ?></span><br>
 	<span class="tag"><?php echo $tag_name;?></span>
 </h3>
-
 <img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
 </div>
 </a>

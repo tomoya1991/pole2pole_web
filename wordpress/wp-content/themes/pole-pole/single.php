@@ -114,13 +114,23 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 </div>
 
 <?php elseif(in_category(8)): //category 2 -> category 8 ?>
-<p class="jap">
-<?php the_title();?>
-</p>
+	<div class="wors">
+	<div id="news_info">
+		<h4>
+		<p class="title"><?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '／'.get_post_meta($id, 'ex_title_en', true); ?></p>
+		<p class="year"><?php the_time('Y/n/j'); ?></p>
+		</h4>
+	</div>
 <div id="images">
 <?php the_content(); ?>
 </div>
+
+<div id="outline">
+<p class="jap">
 <?php echo nl2br(get_post_meta($id, 'news_text', true));?> <br>
+</p>
+</div>
+</div>
 <? endif; ?>
 <?php endwhile; else: ?>
 <?php endif; ?>
