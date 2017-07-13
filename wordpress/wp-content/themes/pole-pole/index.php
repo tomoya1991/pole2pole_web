@@ -60,7 +60,7 @@
 		<div class="work">
 			<h3>
 				<p>
-				<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '｜'.get_post_meta($id, 'title_en', true); ?>
+				<?php the_title(); ?><?php if(get_post_meta($id, 'title_en', true) != '') echo '<br>'.get_post_meta($id, 'title_en', true); ?>
 				</p>
 				<span class="year"><?php the_time('Y/n/j'); ?></span><br>
 				<span class="tag"><?php echo $tag_name;?></span>
