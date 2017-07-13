@@ -8,7 +8,7 @@
 	<!--タイトルと日付-->
 	<div id="work_info">
 		<h4>
-		<p class="title"><?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '／'.get_post_meta($id, 'title_en', true); ?></p>
+		<p class="title"><?php the_title(); if(get_post_meta($id, 'title_en', true) != '') echo '<br>'.get_post_meta($id, 'title_en', true); ?></p>
 	  <p class="year"><?php the_time('Y/n/j'); ?></p>
 		</h4>
 	</div>
@@ -44,9 +44,11 @@
 <p class="jap">
 <?php echo nl2br(get_post_meta($id, 'work_text', true));?> <br>
 </p>
+<?php if(get_post_meta($id,'work_text_en', true) != ''): ?>
 <p class="eng">
 <?php echo get_post_meta($id, 'work_text_en', true); ?>
 </p>
+<?php endif; ?>
 </div>
 <br>
 
@@ -55,7 +57,7 @@
 	<!--タイトルと日付-->
 	<div id="work_info">
 		<h4>
-		<p class="title"><?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '／'.get_post_meta($id, 'ex_title_en', true); ?></p>
+		<p class="title"><?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '<br>'.get_post_meta($id, 'ex_title_en', true); ?></p>
 	  <p class="year"><?php the_time('Y/n/j'); ?></p>
 		</h4>
 	</div>
@@ -98,17 +100,19 @@
 	}
 ?>
 「<?php echo $title_ja ?>」<br>
-<?php echo nl2br(get_post_meta($id, 'ex_text', true));?> <br>
-<br>
-<?php echo nl2br(get_post_meta($id, 'ex_text_en', true));?> <br>
-<br>
+<?php echo nl2br(get_post_meta($id, 'ex_text', true));?> <br><br>
+<?php if(get_post_meta($id, 'ex_text_en', true)): ?>
+<?php echo nl2br(get_post_meta($id, 'ex_text_en', true));?> <br><br>
+<?php endif; ?>
 会場：<a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target="_blank"><?php echo get_post_meta($id, 'ex_place', true); ?></a>（<?php echo get_post_meta($id, 'ex_area', true); ?>）<br>
 会期：<?php echo get_post_meta($id, 'ex_date', true); ?>
 </p>
+<?php if(get_post_meta($id, 'ex_title_en', true) != '' && get_post_meta($id, 'ex_place_en', true) != '' && get_post_meta($id, 'ex_area', true) != ''): ?>
 <p class="eng">
 Title: <?php echo $title_en; ?><br>
 Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target="_blank"><?php echo get_post_meta($id, 'ex_place_en', true); ?></a>（<?php echo get_post_meta($id, 'ex_area_en', true); ?>）<br>
 <!-- Date: <?php echo get_post_meta($id, 'ex_date_en', true); ?> -->
+<?php endif; ?>
 </p>
 </div>
 </div>
