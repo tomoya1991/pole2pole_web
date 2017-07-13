@@ -9,7 +9,7 @@
 <div id="cat">
 	<ul>
 		<li><a href="<?php echo get_home_url(); ?>/?cat=3">all</a>  </li>
-		<li><a href="<?php echo get_home_url(); ?>/?cat=10">design work</a> </li> 
+		<li><a href="<?php echo get_home_url(); ?>/?cat=10">design work</a> </li>
 		<li><a href="<?php echo get_home_url(); ?>/?cat=2">exhibitions</a></li>
 	</ul>
 </div>
