@@ -139,12 +139,16 @@ h2 {
    }
 
 #cat {
-  font-size: 0.8em;
-  padding: 10%; 
+  font-size: 1.5em;
+  letter-spacing: 0.5em;
+  padding:5%   10% 10%; 
 }
 #cat ul a{
   list-style: none;
   text-decoration: none;
+ }
+ #cat a:hover{
+  color: #999999;
  }
 #nav_mob_layer {
   z-index: 9;
@@ -311,6 +315,9 @@ header {
 #upcom a{
   text-decoration: none;
 }
+#upcom a:hover{
+  color: #999999;
+}
 #bg_img{
   z-index: 0;
   width: 100%;
@@ -350,8 +357,7 @@ header {
       font-weight: normal;
       font-size: 1em;
       letter-spacing: 0.1em;
-      max-width: 30%;
-      min-width: 20%;
+      width: 20%;
     }
     h3 p{
         text-align: right;
@@ -372,6 +378,7 @@ header {
          }
     #wrapper.narrow h3{
       margin: 10px 0px;
+      width: 100%;
     }
     h4 p{
       background: rgba(255,255,255,0.6);
