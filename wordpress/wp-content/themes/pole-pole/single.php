@@ -30,7 +30,7 @@
 <?php endif; ?>
 
 
-<div class="work">
+<div class="work_video" >
 <?php if(get_post_meta($id, 'video_url', true) != ''): ?>
 		<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
 		<?php else: ?>
@@ -76,7 +76,7 @@
 
 	<div id="single_all">
 
-		<div class="work">
+		<div class="work_video">
 		<?php if(get_post_meta($id, 'video_url', true) != ''): ?>
 				<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
 				<?php else: ?>
