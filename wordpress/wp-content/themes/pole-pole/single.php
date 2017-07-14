@@ -121,17 +121,17 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 	<div class="works">
 	<div id="news_info">
 		<h4>
-		<p class="title"><?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '／'.get_post_meta($id, 'ex_title_en', true); ?></p>
+		<p class="title"><?php the_title(); ?>
 		<p class="year"><?php the_time('Y/n/j'); ?></p>
 		</h4>
 	</div>
 <div id="images">
-<?php the_content(); ?>
+<?php echo '<img src="'.get_field('news_img').'" alt="" />'; ?>
 </div>
 
 <div id="outline">
 <p class="jap">
-<?php echo nl2br(get_post_meta($id, 'news_text', true));?> <br>
+<?php echo nl2br(get_field('news_text'));?> <br>
 </p>
 </div>
 </div>
@@ -141,7 +141,8 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 <?php wp_reset_postdata()?>
 
 <?php if($slug != ''): ?>
-<?php $the_query = new WP_Query('tag='.$slug); if($the_query->have_posts()): ?>
+<?php $tag_cat = array( 'cat' => '-10', 'tag' => $slug ); ?>
+<?php $the_query = new WP_Query($tag_cat); if($the_query->have_posts()): ?>
 <div id="single_archive">
 	<h2>Related Stuff</h2>
 	<?php

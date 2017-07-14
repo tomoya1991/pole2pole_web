@@ -39,12 +39,20 @@
 <div class="work">
 <h3>
 	<p>
-	<?php the_title(); ?>
+<?php if(in_category(13)): ?>
+from instagram
+<?php elseif(in_category(8)): ?>
+<?php the_title(); ?>
+<?php endif; ?>
 	</p>
 	<span class="year"><?php the_time('Y/n/j'); ?></span><br>
 	<span class="tag"><?php echo $tag_name;?></span>
 </h3>
+<?php if(in_category(13)): ?>
 <img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
+<?php elseif(in_category(8)): ?>
+	<?php echo '<img src="'.get_field('news_img').'" alt="" />'; ?>
+<?php endif; ?>
 </div>
 </a>
 <?php $tag_name = '';?>
@@ -52,10 +60,10 @@
 <?php endwhile; ?>
 <?php wp_reset_postdata(); ?>
 <?php $the_query = new WP_Query('cat=3'); if($the_query->have_posts()): ?>
+<h2>works</h2>
 <?php while ($the_query->have_posts()): $the_query->the_post(); ?>
 <?php $id = get_the_ID(); ?>
 <?php if(get_post_meta($id,show_to_top,true)): ?>
-<h2>works</h2>
 	<a href="<?php the_permalink(); ?>" class="work_wrapper">
 		<div class="work">
 			<h3>
