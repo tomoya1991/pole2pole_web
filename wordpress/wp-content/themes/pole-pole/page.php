@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 <div id=about>
 	<div id="content">
-
+		
+	<h2>about</h2>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 	<div class="post" id="post-<?php the_ID(); ?>">
 	<div class="entry">
-	<h2>about</h2>
 	<div id="about_txt">
 		<img src="<?php bloginfo('template_url'); ?>/assets/img/top_log.png" width="400"  alt="ロゴ">
 	<?php the_content(''); ?>
