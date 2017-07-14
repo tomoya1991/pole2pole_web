@@ -570,7 +570,14 @@ header {
         width: 80%;
         padding-top: 180px;
       }
- 
+    #single_all .work{
+      width: 60%;
+      padding: 5% 0 ;
+      margin: 0 auto;
+    }
+    iframe{
+      width: 100%;
+    }
     footer {
       z-index: 1;
       color:#999999;
