@@ -118,7 +118,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 </div>
 
 <?php elseif(in_category(8)): //category 2 -> category 8 ?>
-	<div class="wors">
+	<div class="works">
 	<div id="news_info">
 		<h4>
 		<p class="title"><?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '／'.get_post_meta($id, 'ex_title_en', true); ?></p>
