@@ -51,7 +51,7 @@ from instagram
 <?php if(in_category(13)): ?>
 <img src="<?php echo catch_that_image(); ?>" alt="<?php the_title(); ?>" />
 <?php elseif(in_category(8)): ?>
-	<?php echo '<img src="'.get_field('news_img').'" alt="" />'; ?>
+<img src="<?php echo catch_that_image(); ?>" alt="" />
 <?php endif; ?>
 </div>
 </a>
