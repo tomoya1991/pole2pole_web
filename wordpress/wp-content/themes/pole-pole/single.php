@@ -126,7 +126,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 		</h4>
 	</div>
 <div id="images">
-<?php echo '<img src="'.get_field('news_img').'" alt="" />'; ?>
+<?php the_content(); ?>
 </div>
 
 <div id="outline">
@@ -151,7 +151,13 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 			$id = get_the_ID();
 			$img_str = get_the_content();
   		 $img_path = explode('"', $img_str);
-  		 if (strpbrk($img_path[3], '.jpg') || strpbrk($img_path[3], '.jpeg')){
+			 $img_ = '';
+			 for($i = 0, $size = count($img_path); $i < $size; ++$i){
+				 $img_ = $img_path[$i];
+  		 if (strstr($img_, 'http')){
+				 break;
+			 }
+		 }
 				 $post_category = get_the_category();
 				 if(in_category(array(2,8))):
 	?>
@@ -170,8 +176,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 			<span class="tag"><?php echo $post_category[0]->cat_name;?></span>
 		</h3>
 	<?php
-		 echo '<img src="'.$img_path[3].'" alt="" />';
-	 }
+		 echo '<img src="'.$img_.'" alt="'.$img_.'" />';
 		 echo "</div></a>";
 		}
 			wp_reset_postdata();
