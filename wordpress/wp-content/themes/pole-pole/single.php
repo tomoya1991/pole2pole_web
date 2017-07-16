@@ -19,24 +19,18 @@
 <!--背景画像を取得-->
 <?php $BgImg = get_field('back_img');
 			if(!empty($BgImg)):
-				if(strlen($BgImg)<5){
+				if(gettype($BgImg)=="array"){
 				$bg_url = $BgImg['url'];
 			}else{
 				$bg_url = $BgImg;
 			}
+
 ?>
 <!--背景画像を表示-->
 <div id="bg_img"><p><img src='<?php echo $bg_url; ?>' alt='<?php the_title(); ?>' /></p></div>
 <?php endif; ?>
 
 
-<div class="work_video" >
-<?php if(get_post_meta($id, 'video_url', true) != ''): ?>
-		<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
-		<?php else: ?>
-		<?php the_post_thumbnail('medium'); ?>
-<?php endif; ?>
-</div>
 <div id="images">
 <?php the_content(); ?>
 </div>
@@ -63,26 +57,18 @@
 	</div>
 	<!--背景画像を取得-->
 	<?php $BgImg = get_field('back_img');
-				if(!empty($BgImg)):
-					if(strlen($BgImg)<5){
-					$bg_url = $BgImg['url'];
-				}else{
-					$bg_url = $BgImg;
-				}
+	if(!empty($BgImg)):
+		if(gettype($BgImg)=="array"){
+		$bg_url = $BgImg['url'];
+	}else{
+		$bg_url = $BgImg;
+	}
 	?>
 	<!--背景画像を表示-->
 	<div id="bg_img"><p><img src='<?php echo $bg_url; ?>' alt='<?php the_title(); ?>' /></p></div>
 	<?php endif; ?>
 
 	<div id="single_all">
-
-		<div class="work_video">
-		<?php if(get_post_meta($id, 'video_url', true) != ''): ?>
-				<?php	echo wp_oembed_get(get_post_meta($id, 'video_url', true)); ?>
-				<?php else: ?>
-				<?php the_post_thumbnail('medium'); ?>
-		<?php endif; ?>
-		</div>
 
 
 	<div id="images">
@@ -144,7 +130,7 @@ Venue: <a href="<?php echo get_post_meta($id, 'ex_place_link', true); ?>" target
 <?php $tag_cat = array( 'cat' => '-10', 'tag' => $slug ); ?>
 <?php $the_query = new WP_Query($tag_cat); if($the_query->have_posts()): ?>
 <div id="single_archive">
-	<h2>Related Stuff</h2>
+	<h2>Related Post</h2>
 	<?php
 		while ($the_query->have_posts()){
 			$the_query->the_post();
