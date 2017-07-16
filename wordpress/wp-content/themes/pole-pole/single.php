@@ -12,6 +12,7 @@
 	  <p class="year"><?php the_time('Y/n/j'); ?></p>
 		</h4>
 	</div>
+	<!--スクロールアロー-->
 	<div id="scroll" >
 		<div id="arrow">
 		</div>
@@ -57,6 +58,11 @@
 		<p class="title"><?php the_title(); ?><?php if(get_post_meta($id, 'ex_title_en', true) != '') echo '<br>'.get_post_meta($id, 'ex_title_en', true); ?></p>
 	  <p class="year"><?php the_time('Y/n/j'); ?></p>
 		</h4>
+	</div>
+	<!--スクロールアロー-->
+	<div id="scroll" >
+		<div id="arrow">
+		</div>
 	</div>
 	<!--背景画像を取得-->
 	<?php $BgImg = get_field('back_img');
