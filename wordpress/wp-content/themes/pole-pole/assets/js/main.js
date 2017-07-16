@@ -1,5 +1,16 @@
 $(document).ready(function() {
-	//背景画像
+
+
+	$(window).scroll(function(){
+		var imgPos = $("#scroll").offset().top;
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if(scroll > windowHeight/4){
+		$("#scroll").css("opacity",0);
+	}
+	});
+
+		//背景画像
 	var o = {
 			$bgImg: $('#bg_img img')
 		};

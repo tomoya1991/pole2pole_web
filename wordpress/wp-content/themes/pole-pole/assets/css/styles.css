@@ -141,7 +141,7 @@ h2 {
 #cat {
   font-size: 1.5em;
   letter-spacing: 0.5em;
-  padding:5%   10% 10%; 
+  padding:5%   10% 10%;
 }
 #cat ul a{
   list-style: none;
@@ -356,10 +356,10 @@ header {
     h4 p{
       text-align: left;
       padding-left: 30px;
-    }  
+    }
     h4 p.title{
       font-size: 1.5em;
-    }  
+    }
     h4 p.year{
       width: 50%;
     }
@@ -555,7 +555,7 @@ header {
     }
     #wrapper.narrow #single_all .work_video{
       width: 80%;
-    }    
+    }
   #scroll{
     margin: 0 auto;
     width: 25px;
@@ -564,6 +564,7 @@ header {
     bottom: 50px;
     left: 0;
     right: 0;
+    transition-duration: .6s;
   }
   #arrow{
   width: 0px;
