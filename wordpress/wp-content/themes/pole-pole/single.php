@@ -19,7 +19,12 @@
 <!--背景画像を取得-->
 <?php $BgImg = get_field('back_img');
 			if(!empty($BgImg)):
+				if(gettype($BgImg)=="array"){
 				$bg_url = $BgImg['url'];
+			}else{
+				$bg_url = $BgImg;
+			}
+
 ?>
 <!--背景画像を表示-->
 <div id="bg_img"><p><img src='<?php echo $bg_url; ?>' alt='<?php the_title(); ?>' /></p></div>
@@ -52,8 +57,12 @@
 	</div>
 	<!--背景画像を取得-->
 	<?php $BgImg = get_field('back_img');
-				if(!empty($BgImg)):
-					$bg_url = $BgImg['url'];
+	if(!empty($BgImg)):
+		if(gettype($BgImg)=="array"){
+		$bg_url = $BgImg['url'];
+	}else{
+		$bg_url = $BgImg;
+	}
 	?>
 	<!--背景画像を表示-->
 	<div id="bg_img"><p><img src='<?php echo $bg_url; ?>' alt='<?php the_title(); ?>' /></p></div>
