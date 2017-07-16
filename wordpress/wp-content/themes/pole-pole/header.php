@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+	<title>pole-pole textile labo 001 "faces"</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="keywords" content="textile,テキスタイル,designe,デザイン,poletopole,ポールトゥポール,廣瀬勇士,シミズダニヤスノブ,近藤正嗣">
+	<meta name="description" content="pole-poleは新しいデザインではなく大切なデザインをコンセプトにフリーランスのテキスタイルデザイナー達によって結成されたデザインチームです">
 
-<meta property="og:locale" content="">
-<meta property="og:site_name" content="">
-<meta property="og:title" content="">
-<meta property="og:description" content="">
-<meta property="og:image" content="">
-<meta property="og:url" content="">
-<meta property="og:type" content="">
-<meta name="twitter:site" content="">
-<meta name="twitter:title" content="">
-<meta name="twitter:card" content="">
-<meta name="twitter:url" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="">
+	<meta property="og:locale" content="ja_JP">
+	<meta property="og:site_name" content="pole-pole">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="pole-poleは新しいデザインではなく大切なデザインをコンセプトにフリーランスのテキスタイルデザイナー達によって結成されたデザインチームです">
+	<meta property="og:image" content=""<?php bloginfo('template_url') ?>/assets/img/og_image.png"">
+	<meta property="og:url" content="http://from-pole-pole.com/">
+	<meta property="og:type" content="website">
+  <meta name="twitter:site" content="@hachibunno5">
+  <meta name="twitter:title" content="pole-pole">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://from-pole-pole.com/">
+  <meta name="twitter:description" content="pole-poleは新しいデザインではなく大切なデザインをコンセプトにフリーランスのテキスタイルデザイナー達によって結成されたデザインチームです">
+  <meta name="twitter:image" content="<?php bloginfo('template_url') ?>/assets/img/og_image.png">
 
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/import.css" type="text/css" media="screen" />
 <link href="https://fonts.googleapis.com/css?family=Yantramanav:100,300" rel="stylesheet">
