@@ -11,7 +11,7 @@
 			if(get_post_meta($id, 'ex_link', true) != ''){
 			$newsJa .= '<li><a href="'.get_post_meta($id, 'ex_link', true).'" target="_blank">'.get_the_title().'</a>  at  <a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place', true).'</a> '.get_post_meta($id, 'ex_area', true).'／'.get_post_meta($id, 'ex_date', true).'</li>';
 			}else{
-			$newsJa .= '<li><a href="'.get_the_permalink().'" target="_blank">'.get_the_title().'</a>  at  <a href="'.get_post_meta($id, 'ex_place_link', true).'" target="_blank">'.get_post_meta($id, 'ex_place', true).'</a> '.get_post_meta($id, 'ex_area', true).'／'.get_post_meta($id, 'ex_date', true).'</li>';
+			$newsJa .= '<li><a href="'.get_the_permalink().'" target="_blank">'.get_the_title().'</a>  at  '.get_post_meta($id, 'ex_place_link', true).get_post_meta($id, 'ex_place', true).'</a> '.get_post_meta($id, 'ex_area', true).'／'.get_post_meta($id, 'ex_date', true).'</li>';
 			}
 		}
 	}
