@@ -258,6 +258,9 @@ header {
     header.narrow.mob{
       height: 80px;
     }
+    header.narrow.mob nav ul li{
+      padding: 0.5em 2em;
+    }
     header.narrow.mob nav, header.narrow.mob #lng {
       display: none;
       position: fixed;
@@ -367,7 +370,7 @@ header {
   #work_info{
     left: 0;
     background: rgba(255,255,255,0.6);
-    top:80px;
+    top:120px;
     z-index: 2;
     letter-spacing: 0.7em;
     position:absolute;
@@ -501,7 +504,7 @@ header {
         letter-spacing: 0.1em;
       }
       #wrapper.narrow #about{
-        padding: 85px 5%;
+        padding: 85px 0;
         height: 460px;
       }
       #wrapper.narrow #about #content{
@@ -509,8 +512,7 @@ header {
         padding: 0;
       }
       #wrapper.narrow #about #designer{
-        padding: 1%;
-        width: 300px
+        width: 100%;
       }
       #wrapper.narrow #about #designer ul{
         padding-left: : 7%;
@@ -564,7 +566,7 @@ header {
     bottom: 50px;
     left: 0;
     right: 0;
-    transition-duration: .6s;
+    transition-duration: .3s;
   }
   #arrow{
   width: 0px;
